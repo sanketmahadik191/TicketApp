@@ -11,6 +11,7 @@ import Navbar from "./Components/Navbar";
 import TicketsList from "./Components/TicketsList";
 import UsersList from "./Components/UsersList";
 import UserInfo from "./Components/UserInfo";
+import Home from "./Pages/Home";
 
 export default function App() {
   const { isAuthenticated, role } = useSelector((state) => state.auth);
@@ -19,10 +20,8 @@ export default function App() {
       {isAuthenticated && <Navbar />}
 
       <Routes>
-        {/* Redirect Root to Login */}
-        {/* <Route path="/" element={<Navigate to={isAuthenticated ? "/dashboard" : "/login"} />} /> */}
         <Route
-          path="/"
+          path="/home"
           element={
             isAuthenticated ? (
               role === "admin" ? (
@@ -38,6 +37,7 @@ export default function App() {
           }
         />
         {/* Public Routes */}
+        <Route path ="/" element={<Home />}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
 
