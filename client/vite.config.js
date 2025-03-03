@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:8080", // Backend URL
+        target: "https://ticketapp-jz7r.onrender.com", // Backend URL
         // target: process.env.VITE_API_BASE_URL, // Use environment variable
         changeOrigin: true,
       },
