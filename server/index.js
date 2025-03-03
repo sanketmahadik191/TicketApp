@@ -12,7 +12,7 @@ const cors = require("cors");
 db();
 app.use(express.json());
 app.use(requestLogger)
-app.use(cors());
+app.use(cors({ origin: '*' }));
 
 app.use('/api/auth',authRoutes);
 app.use('/api/user', userRoutes); // Now properly included
